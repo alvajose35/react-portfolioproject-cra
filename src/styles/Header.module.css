@@ -1,0 +1,20 @@
+.main {
+	position: sticky;
+	top: 0;
+    padding: 30px 0px;
+	/* background-color: darkslategray; */
+	background-image: linear-gradient(darkolivegreen, darkslategray);
+	/* background-image: linear-gradient(#669999, #666633 ); */
+	text-align: center;
+	/* font-size: 10vw; */
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+.logo {
+	position: absolute;
+	bottom: 10px;
+	left: 5px;
+	width: 10%;
+	max-width: 100px;
+}

@@ -1,15 +1,16 @@
 // import './App.css';
-
+import Header from "./components/Header";
+import HomePage from "./pages/Home";
 import MovieList from "./pages/MovieList";
 
 function App() {
-  return (
-    <div>
-      <h1>My Favorite Movies</h1>
-      <div>Movie list</div>
-      <MovieList/>
-    </div>
-  );
+	return (
+		<div>
+			<Header/>
+			<HomePage/>
+			<MovieList/>
+		</div>
+	);
 };
 
 export default App;
