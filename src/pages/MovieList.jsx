@@ -1,14 +1,19 @@
+import { Col, Row } from "reactstrap";
 import MovieCard from "../components/MovieCard";
-import { moviesDB } from "../data/moviesArr";
+// import { moviesDB } from "../data/moviesArr";
 
-const MovieList = () => {
+const MovieList = ({ movieList }) => {
 	return (
-		<>
+		<Row className="ms-auto">
 			<div>Movie list</div>
-			{ moviesDB.map(movie => (
-				<MovieCard movie={movie} key={movie.imdbID}/>
-			))}
-		</>
+			{ movieList.map((movie) => {
+				return (
+					<Col md='5' className="m-4" key={movie.imdbID}>
+						<MovieCard movie={movie} key={movie.imdbID}/>
+					</Col>
+				)
+			})}
+		</Row>
 	);
 };
 
