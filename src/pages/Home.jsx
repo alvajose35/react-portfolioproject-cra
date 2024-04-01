@@ -11,7 +11,7 @@ const HomePage = () => {
 			<Link to='/random'>
 				<p>RANDOM MOVIE</p>
 			</Link>
-			<Link to='/movies'>
+			<Link to='/select'>
 				<p>ADD/SEARCH MOVIE</p>
 			</Link>
 		</Container>

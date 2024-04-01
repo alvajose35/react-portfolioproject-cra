@@ -5,6 +5,7 @@ import HomePage from "./pages/Home";
 import MovieList from "./pages/MovieList";
 import MovieRand from "./pages/MovieRand";
 import MovieDetail from "./pages/MovieDetail";
+import MovieSelect from "./pages/MovieSelectAsync";
 import { moviesDB } from "./data/moviesArr";
 import { useState } from "react";
 
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/movies" element={<MovieList movieList={movieList}/>} />
 				<Route path="/movies/:id" element={<MovieDetail/>} />
 				<Route path="/random" element={<MovieRand movieList={movieList}/>} />
+				<Route path="/select" element={<MovieSelect/>} />
 			</Routes>
 		</>
 	);
