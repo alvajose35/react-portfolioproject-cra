@@ -8,11 +8,9 @@ const MovieRand = ({ movieList }) => {
 	return (
 		<>
 			<h1>Random Page</h1>
-			<Link to={`/movies/${myMovie.imdbID}`}>
-				<div>
+			<div>
 				<MovieCard movie={myMovie} />
-				</div>
-			</Link>
+			</div>
 		</>
 	);
 };
