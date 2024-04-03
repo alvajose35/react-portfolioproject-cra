@@ -1,13 +1,18 @@
+import { Col, Row } from 'reactstrap';
 import { useState, useEffect } from 'react';
+import SearchResultsCard from '../components/SearchResultsCard';
+
 
 const request = `http://www.omdbapi.com/?apikey=a6cd0ef5&s=a+star+is+born`;
 
 const MovieSelect = () => {
 
-	const [isLoading, setLoading] = useState(true); // pending
-    const [data, setData] = useState(null); // fulfilled
-    const [errMsg, setErrMsg] = useState(''); // rejected
+    // API fetch state declaration
+	const [isLoading, setLoading] = useState(true);
+    const [data, setData] = useState(null);
+    const [errMsg, setErrMsg] = useState('');
 
+    // Async fetch to OMDB
 	useEffect(() => {
         const asyncFetch = async () => {
             try {
@@ -29,6 +34,7 @@ const MovieSelect = () => {
         asyncFetch();
     }, []);
 
+    // Render non-nominal responce state
 	if (isLoading) {
         return <h1>loading...</h1>;
     }
@@ -42,19 +48,22 @@ const MovieSelect = () => {
     }
 
 	return (
-		<>
-			<h1>Select Page Async</h1>
-			<div>
+		<Row className="ms-auto">
+			<h1>Search Results</h1>
             {data && (
                 <div>
-                    <h1>A Star is Born Search</h1>
-                    {data.Search.map((movie, idx) => (
-                        <div key={idx}>{movie.Title} {movie.Year}</div>
-                    ))}
+                    <h2>A Star is Born Search</h2>
+                    { data.Search.map((movie, idx) => {
+                        return(
+                            <Col md='5' className="m-4" key={idx}>
+                                <SearchResultsCard movie={movie} key={idx}/>
+                                <div key={idx}>{movie.Title} {movie.Year}</div>
+                            </Col>    
+                        )
+                    })}
                 </div>
             )}
-        </div>
-		</>
+		</Row>
 	);
 };
 
