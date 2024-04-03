@@ -56,8 +56,8 @@ const MovieSelect = () => {
                     { data.Search.map((movie, idx) => {
                         return(
                             <Col md='5' className="m-4" key={idx}>
-                                <SearchResultsCard movie={movie} key={idx}/>
-                                <div key={idx}>{movie.Title} {movie.Year}</div>
+                                <SearchResultsCard movie={movie} />
+                                <div>{movie.Title} {movie.Year}</div>
                             </Col>    
                         )
                     })}

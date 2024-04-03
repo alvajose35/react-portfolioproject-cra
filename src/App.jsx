@@ -6,6 +6,7 @@ import MovieList from "./pages/MovieList";
 import MovieRand from "./pages/MovieRand";
 import MovieDetail from "./pages/MovieDetail";
 import MovieSelect from "./pages/MovieSelect";
+import Search from "./pages/Search";
 import { moviesDB } from "./data/moviesArr";
 import { useState } from "react";
 
@@ -21,6 +22,7 @@ function App() {
 				<Route path="/movies/:id" element={<MovieDetail/>} />
 				<Route path="/random" element={<MovieRand movieList={movieList}/>} />
 				<Route path="/select" element={<MovieSelect/>} />
+				<Route path="/search/:term" element={<Search/>} />
 			</Routes>
 		</>
 	);

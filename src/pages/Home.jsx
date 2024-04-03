@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
+import SearchModal from "../components/SearchModal";
 
 const HomePage = () => {
 	return (
@@ -14,6 +15,7 @@ const HomePage = () => {
 			<Link to='/select'>
 				<p>ADD/SEARCH MOVIE</p>
 			</Link>
+			<SearchModal/>
 		</Container>
 	);
 };
