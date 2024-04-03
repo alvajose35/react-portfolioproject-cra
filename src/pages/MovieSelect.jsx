@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const request = `https://pokeapi.co/api/v2/pokemon?limit=10`;
+const request = `http://www.omdbapi.com/?apikey=a6cd0ef5&s=a+star+is+born`;
 
 const MovieSelect = () => {
 
@@ -47,9 +47,9 @@ const MovieSelect = () => {
 			<div>
             {data && (
                 <div>
-                    <h1>top 10 poke</h1>
-                    {data.results.map((item, idx) => (
-                        <div key={idx}>{item.name}</div>
+                    <h1>A Star is Born Search</h1>
+                    {data.Search.map((movie, idx) => (
+                        <div key={idx}>{movie.Title} {movie.Year}</div>
                     ))}
                 </div>
             )}

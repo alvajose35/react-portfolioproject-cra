@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
 
 const MovieRand = ({ movieList }) => {

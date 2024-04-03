@@ -5,7 +5,7 @@ import HomePage from "./pages/Home";
 import MovieList from "./pages/MovieList";
 import MovieRand from "./pages/MovieRand";
 import MovieDetail from "./pages/MovieDetail";
-import MovieSelect from "./pages/MovieSelectAsync";
+import MovieSelect from "./pages/MovieSelect";
 import { moviesDB } from "./data/moviesArr";
 import { useState } from "react";
 
