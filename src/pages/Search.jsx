@@ -29,11 +29,9 @@ const Search = () => {
 					throw new Error(response.status);
 				}
 				const fetchedData = await response.json();
-				setTimeout(() => {
-					setLoading(false);
-					setData(fetchedData);
-					setErrMsg('');
-				}, 3000);
+				setLoading(false);
+				setData(fetchedData);
+				setErrMsg('');
 			} catch (err) {
 				setLoading(false);
 				setErrMsg(err.toString());
@@ -64,8 +62,8 @@ const Search = () => {
 					{data.Search.map((movie, idx) => {
 						return (
 							<Col md='5' className="m-4" key={idx}>
-								<SearchResultsCard movie={movie} />
 								<div>{movie.Title} {movie.Year}</div>
+								<SearchResultsCard movie={movie} />
 							</Col>
 						)
 					})}

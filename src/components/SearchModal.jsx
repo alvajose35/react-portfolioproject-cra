@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, FormGroup, Label, Button } from 'reactstrap';
 import MovieSelect from '../pages/MovieSelect';
 
@@ -9,6 +9,8 @@ const SearchModal = () => {
 	const [searchModalOpen, setSearchModalOpen] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const inputEl = useRef();
+
+	const navigate = useNavigate();
 
 	// Modal Form submit button handler
 	const handleSubmit = (e) => {
@@ -20,11 +22,11 @@ const SearchModal = () => {
 		setSearchModalOpen(false);
 		setIsSubmitted(true);
 
-		window.location.href = "/search/"+ inputEl.current.value;
+		// window.location.href = "/search/"+ inputEl.current.value;
 
 		// this.props.history.push('/movies')
 
-		// redirect("/movies")
+		navigate("/search/"+ inputEl.current.value);
 
 		// return (
 		// 	<MovieSelect/>
